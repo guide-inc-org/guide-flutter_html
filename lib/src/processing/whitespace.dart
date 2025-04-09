@@ -225,12 +225,7 @@ class WhitespaceProcessing {
   /// (3) Replace all tabs with a space
   /// (4) Replace any instances of two or more spaces with a single space.
   static String _removeUnnecessaryWhitespace(String text) {
-    return text
-        .replaceAll(RegExp(r" *(?=\n)"), "")
-        .replaceAll(RegExp(r"(?<=\n) *"), "")
-        .replaceAll("\n", " ")
-        .replaceAll("\t", " ")
-        .replaceAll(RegExp(r" {2,}"), " ");
+    return text.replaceAll(RegExp(r" *\n *"), "\n").replaceAll("\n", " ").replaceAll("\t", " ").replaceAll(RegExp(r" {2,}"), " ");
   }
 
   /// [_removeEmptyElements] recursively removes empty elements.

@@ -29,6 +29,7 @@ class InteractiveElementBuiltIn extends HtmlExtension {
       href: context.attributes['href'],
       style: Style(
         color: Colors.blue,
+        textDecorationColor: Colors.blue,
         textDecoration: TextDecoration.underline,
       ),
       node: context.node,
@@ -64,6 +65,11 @@ class InteractiveElementBuiltIn extends HtmlExtension {
         style: context.styledElement?.style.generateTextStyle() ?? childSpan.style,
         semanticsLabel: childSpan.semanticsLabel,
         recognizer: TapGestureRecognizer()..onTap = onTap,
+        locale: childSpan.locale,
+        mouseCursor: childSpan.mouseCursor,
+        onEnter: childSpan.onEnter,
+        onExit: childSpan.onExit,
+        spellOut: childSpan.spellOut,
       );
     } else {
       return WidgetSpan(
