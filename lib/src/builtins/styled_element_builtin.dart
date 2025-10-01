@@ -357,7 +357,10 @@ class StyledElementBuiltIn extends HtmlExtension {
         break;
       case "p":
         styledElement.style = Style(
-          margin: Margins.symmetric(vertical: 1, unit: Unit.em),
+          margin: Margins(
+            blockStart: Margin(1, Unit.em),
+            blockEnd: Margin(1, Unit.em),
+          ),
           display: Display.block,
         );
         break;
